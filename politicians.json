@@ -62,7 +62,42 @@
             "lat": 35,
             "lng": 51.3,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Masoud_Pezeshkian_14040616_%28cropped%29.jpg/250px-Masoud_Pezeshkian_14040616_%28cropped%29.jpg",
-            "role": "member"
+            "role": "President"
+        },
+        {
+            "name": "Abbas Araghchi",
+            "lat": 35.2,
+            "lng": 51.3,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/14031011_Abbas_Araghchi_%28cropped%29.jpg",
+            "role": "Minister of Foreign Affairs"
+        },
+        {
+            "name": "Amir Hatami",
+            "lat": 35.80,
+            "lng": 51.3,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Amir_Hatami_2019.jpg",
+            "role": "commander of Army"
+        },
+        {
+            "name": "AhmadReza Radan",
+            "lat": 35.75,
+            "lng": 51.35,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Ahmad-Reza_Radan_press_conference%2C_19_February_2017_%281395120113094845510050934%29.jpg",
+            "role": "Chief of Law Enforcement Force"
+        },
+        {
+            "name": "Mohammad Pakpour",
+            "lat": 35.75,
+            "lng": 51.25,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Sardar_Mohammad_Pakpour-by_Tasnimnews.com_02%29.jpg/120px-Sardar_Mohammad_Pakpour-by_Tasnimnews.com_02%29.jpg",
+            "role": "commander of the IRGC"
+        },
+        {
+            "name": "Abdolrahim Mousavi",
+            "lat": 35.75,
+            "lng": 51.3,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Abdolrahim_Mousavi_2019.jpg/500px-Abdolrahim_Mousavi_2019.jpg",
+            "role": "chief of staff of the Armed Forces"
         },
         {
             "name": "Seyyed Ali Khamenei",

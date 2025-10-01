@@ -109,7 +109,7 @@
         let borderWidth = role === "leader" ? "4px" : "2px";
 
         return L.divIcon({
-          html: `<div class="politician-icon" 
+          html: `<div class="politician-icon"
                   style="width:${size}px;height:${size}px;
                          border:${borderWidth} solid ${borderColor};"
                   title="${name}">
@@ -164,16 +164,21 @@
           name: "Donald Trump",
           lat: 38.9,
           lng: -77.03,
-          imageUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg/250px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg",
+          imageUrl: "img/Donald_Trump.jpg",
           role: "leader",
         },
         {
           name: "Xi Jinping",
           lat: 39.9,
           lng: 116.4,
-          imageUrl:
-            "https://upload.wikimedia.org/wikipedia/commons/3/37/Xi_Jinping_in_Beijing_on_May_13%2C_2025_%28cropped%29.jpg",
+          imageUrl: "img/Xi_Jinping.jpg",
+          role: "leader",
+        },
+        {
+          name: "Abdul-Malik al-Houthi",
+          lat: 15.35,
+          lng: 44.21,
+          imageUrl: "img/Abdul_Malik_al_Houthi.jpg",
           role: "leader",
         },
       ];
