@@ -65,10 +65,18 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-      var map = L.map("map").setView([20, 0], 2);
+      var map = L.map("map", {
+        maxBounds: [
+          [-85, -180],
+          [85, 180],
+        ],
+        maxBoundsViscosity: 1.0,
+      }).setView([20, 0], 2);
 
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution: "© OpenStreetMap contributors",
+        noWrap: true,
+        minZoom: 3,
       }).addTo(map);
 
       var politicianMarkers = [];
