@@ -52,13 +52,14 @@
   </head>
   <body>
     <div id="controls">
-      <input type="text" id="nameInput" placeholder="نام سیاستمدار" />
-      <input type="text" id="imgInput" placeholder="لینک عکس (URL)" />
+      <input type="text" id="nameInput" placeholder="name" />
+      <input type="text" id="imgInput" placeholder="image link (URL)" />
       <select id="roleInput">
-        <option value="member">عضو</option>
-        <option value="leader">رهبر</option>
+        <option value="" disabled selected hidden>role</option>
+        <option value="member">member</option>
+        <option value="leader">leader</option>
       </select>
-      <button onclick="addPoliticianFromForm()">➕ اضافه کن</button>
+      <button onclick="addPoliticianFromForm()">➕ add</button>
     </div>
     <div id="map"></div>
 

@@ -55,6 +55,15 @@
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Benjamin_Netanyahu%2C_February_2023.jpg/250px-Benjamin_Netanyahu%2C_February_2023.jpg",
             "role": "leader"
         },
+
+
+        {
+            "name": "Masoud Pezeshkian",
+            "lat": 35,
+            "lng": 51.3,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Masoud_Pezeshkian_14040616_%28cropped%29.jpg/250px-Masoud_Pezeshkian_14040616_%28cropped%29.jpg",
+            "role": "member"
+        },
         {
             "name": "Seyyed Ali Khamenei",
             "lat": 35.7,
@@ -62,6 +71,8 @@
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Ali_Khamenei_2025_%283x4_cropped%29.jpg/250px-Ali_Khamenei_2025_%283x4_cropped%29.jpg",
             "role": "leader"
         },
+
+
         {
             "name": "Kim Jong Un",
             "lat": 39.1,
