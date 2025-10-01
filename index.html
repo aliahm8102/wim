@@ -100,7 +100,8 @@
         imageUrl,
         zoomLevel,
         name,
-        role = "member"
+        role = "member",
+        title = ""
       ) {
         let size = zoomLevel * 3 + 20;
 
@@ -120,29 +121,30 @@
         });
       }
 
-      function addPolitician(lat, lng, name, imageUrl, role = "member") {
+      function addPolitician(lat, lng, name, imageUrl, role = "member", title) {
         var marker = L.marker([lat, lng], {
           icon: createPoliticianIcon(imageUrl, map.getZoom(), name, role),
           draggable: true,
         }).addTo(map);
 
-        marker.bindPopup(`<b>${name}</b> (${role})`);
+        marker.bindPopup(`<b>${name}</b> (${title})`);
         politicianMarkers.push({
           marker: marker,
           imageUrl: imageUrl,
           name: name,
           role: role,
+          title: title,
         });
       }
 
       function addPoliticianFromForm() {
-        let name = document.getElementById("nameInput").value || "بدون نام";
+        let name = document.getElementById("nameInput").value || "no name";
         let img =
           document.getElementById("imgInput").value ||
           "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png";
         let role = document.getElementById("roleInput").value;
 
-        addPolitician(20, 0, name, img, role);
+        addPolitician(20, 0, name, img, role, title);
 
         document.getElementById("nameInput").value = "";
         document.getElementById("imgInput").value = "";
@@ -153,7 +155,7 @@
         let zoomLevel = map.getZoom();
         politicianMarkers.forEach((p) => {
           p.marker.setIcon(
-            createPoliticianIcon(p.imageUrl, zoomLevel, p.name, p.role)
+            createPoliticianIcon(p.imageUrl, zoomLevel, p.name, p.role, p.title)
           );
         });
       });
@@ -166,6 +168,7 @@
           lng: -77.03,
           imageUrl: "img/Donald_Trump.jpg",
           role: "leader",
+          title: "President",
         },
         {
           name: "Xi Jinping",
@@ -173,6 +176,7 @@
           lng: 116.4,
           imageUrl: "img/Xi_Jinping.jpg",
           role: "leader",
+          title: "President",
         },
         {
           name: "Abdul-Malik al-Houthi",
@@ -180,11 +184,12 @@
           lng: 44.21,
           imageUrl: "img/Abdul_Malik_al_Houthi.jpg",
           role: "leader",
+          title: "leader",
         },
       ];
 
       initialPoliticians.forEach((p) => {
-        addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role);
+        addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role, p.title);
       });
     </script>
     <script>
@@ -192,7 +197,7 @@
         .then((response) => response.json())
         .then((data) => {
           data.forEach((p) => {
-            addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role);
+            addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role, p.title);
           });
         })
         .catch((error) => console.error("خطا در بارگذاری فایل:", error));

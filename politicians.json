@@ -4,56 +4,65 @@
             "lat": 52.52,
             "lng": 13.4,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/2024-08-21_Friedrich_Merz_in_Erfurt_2024_STP_3041_by_Stepro_%283x4_cropped%29.jpg/250px-2024-08-21_Friedrich_Merz_in_Erfurt_2024_STP_3041_by_Stepro_%283x4_cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Chancellor"
+
         },
         {
             "name": "Vladimir Putin",
             "lat": 55.7,
             "lng": 37.6,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29.jpg/250px-%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Narendra Modi",
             "lat": 28.7,
             "lng": 77.1,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Shri_Narendra_Modi%2C_Prime_Minister_of_India_%283x4_cropped%29.jpg/250px-Shri_Narendra_Modi%2C_Prime_Minister_of_India_%283x4_cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Prime Minister"
         },
         {
             "name": "Emmanuel Macron",
             "lat": 48.8,
             "lng": 2.3,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Emmanuel_Macron_-_June_2025_%283x4_cropped%29.jpg/250px-Emmanuel_Macron_-_June_2025_%283x4_cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Keir Starmer",
             "lat": 51.5,
             "lng": 0.1,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Prime_Minister_Sir_Keir_Starmer_Official_Portrait_%28cropped%29.jpg/250px-Prime_Minister_Sir_Keir_Starmer_Official_Portrait_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Prime Minister"
         },
         {
             "name": "Recep Tayyip Erdogan",
             "lat": 39.9,
             "lng": 32.8,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Turkish_President_Recep_Tayyip_Erdo%C4%9Fan_in_January_2024_%28cropped%29.jpg/250px-Turkish_President_Recep_Tayyip_Erdo%C4%9Fan_in_January_2024_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Mohammed bin Salman",
             "lat": 24.7,
             "lng": 46.6,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/%D8%A7%D9%84%D8%B5%D9%88%D8%B1%D8%A9_%D8%A7%D9%84%D8%B1%D8%B3%D9%85%D9%8A%D8%A9_%D9%84%D9%84%D8%A3%D9%85%D9%8A%D8%B1_%D9%85%D8%AD%D9%85%D8%AF_%D8%A8%D9%86_%D8%B3%D9%84%D9%85%D8%A7%D9%86_%D8%A8%D9%86_%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2_%D8%A2%D9%84_%D8%B3%D8%B9%D9%88%D8%AF_%28%D9%85%D9%82%D8%B5%D9%88%D8%B5%D8%A9%29.jpg/250px-%D8%A7%D9%84%D8%B5%D9%88%D8%B1%D8%A9_%D8%A7%D9%84%D8%B1%D8%B3%D9%85%D9%8A%D8%A9_%D9%84%D9%84%D8%A3%D9%85%D9%8A%D8%B1_%D9%85%D8%AD%D9%85%D8%AF_%D8%A8%D9%86_%D8%B3%D9%84%D9%85%D8%A7%D9%86_%D8%A8%D9%86_%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%B9%D8%B2%D9%8A%D8%B2_%D8%A2%D9%84_%D8%B3%D8%B9%D9%88%D8%AF_%28%D9%85%D9%82%D8%B5%D9%88%D8%B5%D8%A9%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "de facto ruler"
         },
         {
             "name": "Benjamin Netanyahu",
             "lat": 32.1,
             "lng": 34.7,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Benjamin_Netanyahu%2C_February_2023.jpg/250px-Benjamin_Netanyahu%2C_February_2023.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Prime Minister"
         },
 
 
@@ -62,148 +71,279 @@
             "lat": 35,
             "lng": 51.3,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Masoud_Pezeshkian_14040616_%28cropped%29.jpg/250px-Masoud_Pezeshkian_14040616_%28cropped%29.jpg",
-            "role": "President"
+            "role": "member",
+            "title": "President"
         },
         {
             "name": "Abbas Araghchi",
             "lat": 35.2,
             "lng": 51.3,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/14031011_Abbas_Araghchi_%28cropped%29.jpg",
-            "role": "Minister of Foreign Affairs"
+            "role": "member",
+            "title": "Minister of Foreign Affairs"
         },
         {
             "name": "Amir Hatami",
             "lat": 35.80,
             "lng": 51.3,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Amir_Hatami_2019.jpg",
-            "role": "commander of Army"
+            "role": "member",
+            "title": "commander of Army"
         },
         {
             "name": "AhmadReza Radan",
             "lat": 35.75,
             "lng": 51.35,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Ahmad-Reza_Radan_press_conference%2C_19_February_2017_%281395120113094845510050934%29.jpg",
-            "role": "Chief of Law Enforcement Force"
+            "role": "member",
+            "title": "Chief of Law Enforcement Force"
         },
         {
             "name": "Mohammad Pakpour",
             "lat": 35.75,
             "lng": 51.25,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Sardar_Mohammad_Pakpour-by_Tasnimnews.com_02%29.jpg/120px-Sardar_Mohammad_Pakpour-by_Tasnimnews.com_02%29.jpg",
-            "role": "commander of the IRGC"
+            "role": "member",
+            "title": "commander of the IRGC"
         },
         {
             "name": "Abdolrahim Mousavi",
             "lat": 35.75,
             "lng": 51.3,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Abdolrahim_Mousavi_2019.jpg/500px-Abdolrahim_Mousavi_2019.jpg",
-            "role": "chief of staff of the Armed Forces"
+            "role": "member",
+            "title": "chief of staff of the Armed Forces"
         },
         {
             "name": "Seyyed Ali Khamenei",
             "lat": 35.7,
             "lng": 51.3,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Ali_Khamenei_2025_%283x4_cropped%29.jpg/250px-Ali_Khamenei_2025_%283x4_cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "leader"
         },
-
-
         {
             "name": "Kim Jong Un",
             "lat": 39.1,
             "lng": 125.8,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Kim_Jong-un_April_2019_%28cropped%29.jpg/250px-Kim_Jong-un_April_2019_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "leader"
         },
         {
             "name": "Volodymyr Zelenskyy",
             "lat": 50.4,
             "lng": 30.5,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Volodymyr_Zelenskyy_in_2022.jpg/250px-Volodymyr_Zelenskyy_in_2022.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Abdel Fattah el-Sisi",
             "lat": 30.0444,
             "lng": 31.2357,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/AbdelFattah_Elsisi_%28cropped%29.jpg/250px-AbdelFattah_Elsisi_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Ahmed al-Sharaa",
             "lat": 33.5138,
             "lng": 36.2765,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Ahmed_al-Sharaa_in_July_2025_%28cropped%29.jpg/250px-Ahmed_al-Sharaa_in_July_2025_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Ilham Aliyev",
             "lat": 40.4093,
             "lng": 49.8671,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Ilham_Aliyev_2024_%28%C4%B0lham_%C6%8Fliyevin%29_%28cropped%29.jpg/250px-Ilham_Aliyev_2024_%28%C4%B0lham_%C6%8Fliyevin%29_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Nicolás Maduro",
             "lat": 10.4806,
             "lng": -66.9036,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%81_%D0%9C%D0%B0%D0%B4%D1%83%D1%80%D0%BE_%2852936004750%29%28cropped%29.jpg/250px-%D0%9D%D0%B8%D0%BA%D0%BE%D0%BB%D0%B0%D1%81_%D0%9C%D0%B0%D0%B4%D1%83%D1%80%D0%BE_%2852936004750%29%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Luiz Inácio Lula da Silva",
             "lat": -15.8267,
             "lng": -47.9218,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Foto_oficial_do_Presidente_da_Rep%C3%BAblica_Luiz_In%C3%A1cio_Lula_da_Silva_%28cropped%29_%282%29.jpg/250px-Foto_oficial_do_Presidente_da_Rep%C3%BAblica_Luiz_In%C3%A1cio_Lula_da_Silva_%28cropped%29_%282%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
         },
         {
             "name": "Mohammed Shia' al-Sudani",
             "lat": 33.3152,
             "lng": 44.3661,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Mohammed_Shia%27_Al_Sudani%2C_Prime_Minister_of_Iraq%2C_at_the_Pentagon%2C_Virginia_on_15_April_2024_%28cropped%29.jpg/250px-Mohammed_Shia%27_Al_Sudani%2C_Prime_Minister_of_Iraq%2C_at_the_Pentagon%2C_Virginia_on_15_April_2024_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Prime Minister"
         },
         {
             "name": "Tamim bin Hamad Al Thani",
             "lat": 25.276987,
             "lng": 51.520008,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Emir_of_Qatar%2C_Feb._19%2C_2025_%28cropped%29.jpg/250px-Emir_of_Qatar%2C_Feb._19%2C_2025_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Emir of Qatar"
         },
         {
             "name": "Viktor Orbán",
             "lat": 47.4979,
             "lng": 19.0402,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Viktor_Orban.2024_%28cropped%29.jpg/250px-Viktor_Orban.2024_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Prime Minister"
         },
         {
             "name": "Shehbaz Sharif",
             "lat": 33.6844,
             "lng": 73.0479,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Shehbaz_Sharif_in_2024.jpg/250px-Shehbaz_Sharif_in_2024.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Prime Minister"
         },
         {
             "name": "Kim Min-seok",
             "lat": 37.5665,
             "lng": 126.978,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Kim_Min-seok_20250807.jpg/250px-Kim_Min-seok_20250807.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Prime Minister"
         },
         {
             "name": "Giorgia Meloni",
             "lat": 41.9028,
             "lng": 12.4964,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Giorgia_Meloni_Official_2023_%28cropped%29.jpg/250px-Giorgia_Meloni_Official_2023_%28cropped%29.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "Prime Minister"
         },
         {
             "name": "Alexander Lukashenko",
             "lat": 53.9,
             "lng": 27.5667,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Alexander_Lukashenko_%282024-05-24%29_%28cropped%29_3.jpg",
-            "role": "leader"
+            "role": "leader",
+            "title": "President"
+        },
+        {
+            "name": "Mohammed bin Zayed Al Nahyan",
+            "lat": 24.4,
+            "lng": 54.5,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Mohamed_bin_Zayed_Al_Nahyan_-_2024_%28cropped%29.jpg/500px-Mohamed_bin_Zayed_Al_Nahyan_-_2024_%28cropped%29.jpg",
+            "role": "leader",
+            "title": "President"
+        },
+        {
+            "name": "Mohammed bin Rashid Al Maktoum",
+            "lat": 25.2,
+            "lng": 55.3,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mohammed_bin_Rashid_Al_Maktoum_%2815-02-2021%29.jpg/500px-Mohammed_bin_Rashid_Al_Maktoum_%2815-02-2021%29.jpg",
+            "role": "member",
+            "title": "Prime Minister"
+        },
+        {
+            "name": "Naim Mohammad Qassem",
+            "lat": 34.01,
+            "lng": 36.14,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Naim_Qassem_Visits_Tasnim_Office_%283x4_cropped%29.jpg",
+            "role": "member",
+            "title": "Hezbollah's secretary-general"
+        },
+        {
+            "name": "Joseph Aoun",
+            "lat": 33.9,
+            "lng": 35.5,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Nikos_Christodoulides_meets_with_Joseph_Aoun_%28cropped%29.jpg/500px-Nikos_Christodoulides_meets_with_Joseph_Aoun_%28cropped%29.jpg",
+            "role": "leader",
+            "title": "President"
+        },
+        {
+            "name": "Valery Gerasimov",
+            "lat": 55.75,
+            "lng": 37.6,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Valery_Gerasimov_official_photo_version_2022-10-03.jpg/500px-Valery_Gerasimov_official_photo_version_2022-10-03.jpg",
+            "role": "member",
+            "title": "Chief of the General Staff"
+        },
+        {
+            "name": "Sergey Lavrov",
+            "lat": 55.75,
+            "lng": 37.65,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B0%D0%B2%D1%80%D0%BE%D0%B2_%2818-11-2022%29_%28cropped%29.jpg/500px-%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B0%D0%B2%D1%80%D0%BE%D0%B2_%2818-11-2022%29_%28cropped%29.jpg",
+            "role": "member",
+            "title": "Minister of Foreign Affairs"
+        },
+        {
+            "name": "Pete Hegseth",
+            "lat": 38.95,
+            "lng": -77.05,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pete_Hegseth_Official_Portrait.jpg/500px-Pete_Hegseth_Official_Portrait.jpg",
+            "role": "member",
+            "title": "Secretary of War"
+        },
+        {
+            "name": "Marco Rubio",
+            "lat": 38.95,
+            "lng": -77.0,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Official_portrait_of_Secretary_Marco_Rubio_%28cropped%29%282%29.jpg/500px-Official_portrait_of_Secretary_Marco_Rubio_%28cropped%29%282%29.jpg",
+            "role": "member",
+            "title": "Secretary of State"
+        },
+        {
+            "name": "Abdel Fattah al-Burhan",
+            "lat": 15.6,
+            "lng": 32.5,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Abdel_Fattah_al-Burhan_in_April_2025_%28cropped%29.jpg/505px-Abdel_Fattah_al-Burhan_in_April_2025_%28cropped%29.jpg",
+            "role": "leader",
+            "title": "President"
+        },
+        {
+            "name": "Mohamed Hamdan Dagalo",
+            "lat": 12.05,
+            "lng": 24.88,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Mohamed_Hamdan_Dagalo_2022_%28cropped%29.jpg",
+            "role": "leader",
+            "title": "Chairman of Government of Peace and Unity"
+        },
+        {
+            "name": "Eyal Zamir",
+            "lat": 31.8,
+            "lng": 35.1,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Eyal_Zamir-RAV_ALUF.jpg/500px-Eyal_Zamir-RAV_ALUF.jpg",
+            "role": "member",
+            "title": "Chief of the General Staff"
+        },
+        {
+            "name": "Israel Katz",
+            "lat": 31.8,
+            "lng": 35.2,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Israel_Katz_on_July_3%2C_2024_%28cropped%29.jpg/500px-Israel_Katz_on_July_3%2C_2024_%28cropped%29.jpg",
+            "role": "member",
+            "title": "Minister of Defense"
+        },
+        {
+            "name": "Hakan Fidan",
+            "lat": 40.0,
+            "lng": 32.8,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Munich_Security_Conference_%2854326135247%29%28cropped%29.jpg/500px-Munich_Security_Conference_%2854326135247%29%28cropped%29.jpg",
+            "role": "member",
+            "title": "Minister of Foreign Affairs"
+        },
+        {
+            "name": "Nikol Pashinyan",
+            "lat": 40.18,
+            "lng": 44.51,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Nikol_Pashinyan_in_Tirana%2C_Albania_on_May_15%2C_2025_%28cropped%29.jpg/500px-Nikol_Pashinyan_in_Tirana%2C_Albania_on_May_15%2C_2025_%28cropped%29.jpg",
+            "role": "leader",
+            "title": "Prime Minister"
         }
       ]
