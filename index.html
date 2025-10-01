@@ -73,6 +73,21 @@
 
       var politicianMarkers = [];
 
+      // nato countries geojson
+      fetch("nato-countries.json")
+        .then((response) => response.json())
+        .then((data) => {
+          L.geoJSON(data, {
+            style: {
+              fillColor: "blue",
+              weight: 2,
+              color: "white",
+              fillOpacity: 0.5,
+            },
+            interactive: false,
+          }).addTo(map);
+        });
+
       function createPoliticianIcon(
         imageUrl,
         zoomLevel,
@@ -81,7 +96,7 @@
       ) {
         let size = zoomLevel * 3 + 20;
 
-        // تعیین رنگ و ضخامت بر اساس نقش
+        // roles options
         let borderColor = role === "leader" ? "gold" : "#333";
         let borderWidth = role === "leader" ? "4px" : "2px";
 
@@ -125,7 +140,7 @@
         document.getElementById("imgInput").value = "";
       }
 
-      // تغییر اندازه و حفظ border با زوم
+      // zoom Level
       map.on("zoom", function () {
         let zoomLevel = map.getZoom();
         politicianMarkers.forEach((p) => {
@@ -135,7 +150,7 @@
         });
       });
 
-      // چند سیاستمدار اولیه
+      // initial Politicians
       var initialPoliticians = [
         {
           name: "Donald Trump",
