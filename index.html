@@ -1,31 +1,84 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Interactive Political Map</title>
     <meta charset="utf-8" />
+    <title>Interactive Political Map</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
       body {
         margin: 0;
         padding: 0;
+        font-family: sans-serif;
       }
       #map {
-        height: 85vh;
+        height: 100vh;
       }
+
+      /* toggle button */
+      #toggleForm {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 9999;
+        background: #0077ff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 14px;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      }
+      #toggleForm:hover {
+        background: #005bcc;
+      }
+
+      /* controls form (hidden by default) */
       #controls {
-        height: 15vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
+        position: absolute;
+        top: 60px;
+        right: 10px;
+        z-index: 9998;
         background: #f2f2f2;
-        border-bottom: 1px solid #ccc;
-        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 12px;
+        display: none; /* hidden at first */
+        flex-direction: column;
+        gap: 8px;
+        width: 250px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       }
+      #controls.show {
+        display: flex;
+      }
+
+      input,
+      select,
+      button.addBtn {
+        padding: 6px 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        width: 100%;
+      }
+      button.addBtn {
+        background: #0077ff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      button.addBtn:hover {
+        background: #005bcc;
+      }
+
+      /* marker */
       .politician-icon {
         border-radius: 50%;
         overflow: hidden;
         transition: transform 0.2s;
+        background: #fff;
       }
       .politician-icon img {
         width: 100%;
@@ -33,39 +86,107 @@
         object-fit: cover;
         object-position: top center;
       }
-      input,
-      button {
-        padding: 6px 10px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
+
+      /* modal */
+      #infoModal {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        padding: 20px;
       }
-      button {
-        background: #0077ff;
-        color: white;
+      #infoModal.show {
+        display: flex;
+      }
+      #infoContent {
+        width: min(480px, 95vw);
+        background: #fff;
+        color: #222;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        position: relative;
+        text-align: center;
+      }
+      #closeInfo {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background: transparent;
         border: none;
+        font-size: 18px;
         cursor: pointer;
       }
-      button:hover {
-        background: #005bcc;
+      #closeInfo:hover {
+        background: #f2f2f2;
+      }
+      #infoImage {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top center;
+        margin: 10px auto 14px;
+        border: 4px solid #eee;
+      }
+      #infoName {
+        margin: 6px 0 4px;
+        font-size: 22px;
+      }
+      #infoTitle {
+        margin: 0 0 8px;
+        font-size: 16px;
+        color: #666;
       }
     </style>
   </head>
   <body>
+    <!-- Toggle Button -->
+    <button id="toggleForm">➕ Add Politician</button>
+
+    <!-- Hidden Add Form -->
     <div id="controls">
       <input type="text" id="nameInput" placeholder="name" />
       <input type="text" id="imgInput" placeholder="image link (URL)" />
+      <input type="text" id="titleInput" placeholder="title" />
       <select id="roleInput">
         <option value="" disabled selected hidden>role</option>
         <option value="member">member</option>
         <option value="leader">leader</option>
       </select>
-      <button onclick="addPoliticianFromForm()">➕ add</button>
+      <button class="addBtn" onclick="addPoliticianFromForm()">Add</button>
     </div>
+
+    <!-- Map -->
     <div id="map"></div>
+
+    <!-- Info Modal -->
+    <div id="infoModal">
+      <div id="infoContent">
+        <button id="closeInfo">✖</button>
+        <img id="infoImage" src="" alt="portrait" />
+        <h2 id="infoName"></h2>
+        <h4 id="infoTitle"></h4>
+      </div>
+    </div>
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-      var map = L.map("map", {
+      // Toggle Form Visibility
+      const toggleBtn = document.getElementById("toggleForm");
+      const controls = document.getElementById("controls");
+      toggleBtn.onclick = () => {
+        controls.classList.toggle("show");
+        toggleBtn.textContent = controls.classList.contains("show")
+          ? "✖ Close Form"
+          : "➕ Add Politician";
+      };
+
+      // Map setup
+      const map = L.map("map", {
         maxBounds: [
           [-85, -180],
           [85, 180],
@@ -79,96 +200,104 @@
         minZoom: 3,
       }).addTo(map);
 
-      var politicianMarkers = [];
+      const politicianMarkers = [];
 
-      // nato countries geojson
-      fetch("nato-countries.json")
-        .then((response) => response.json())
-        .then((data) => {
-          L.geoJSON(data, {
-            style: {
-              fillColor: "blue",
-              weight: 2,
-              color: "white",
-              fillOpacity: 0.5,
-            },
-            interactive: false,
-          }).addTo(map);
-        });
-
+      // Icon creator (role controls border color)
       function createPoliticianIcon(
         imageUrl,
         zoomLevel,
         name,
-        role = "member",
-        title = ""
+        role = "member"
       ) {
-        let size = zoomLevel * 3 + 20;
-
-        // roles options
-        let borderColor = role === "leader" ? "gold" : "#333";
-        let borderWidth = role === "leader" ? "4px" : "2px";
+        const size = zoomLevel * 3 + 20;
+        const borderColor = role === "leader" ? "gold" : "#333";
+        const borderWidth = role === "leader" ? "4px" : "2px";
 
         return L.divIcon({
           html: `<div class="politician-icon"
-                  style="width:${size}px;height:${size}px;
-                         border:${borderWidth} solid ${borderColor};"
-                  title="${name}">
-             <img src="${imageUrl}" />
-           </div>`,
+                      style="width:${size}px;height:${size}px;border:${borderWidth} solid ${borderColor};"
+                      title="${name}">
+                    <img src="${imageUrl}" />
+                 </div>`,
           className: "",
           iconSize: [size, size],
         });
       }
 
-      function addPolitician(lat, lng, name, imageUrl, role = "member", title) {
-        var marker = L.marker([lat, lng], {
+      // Modal logic
+      const modal = document.getElementById("infoModal");
+      const closeBtn = document.getElementById("closeInfo");
+      function showInfoModal(name, imageUrl, title) {
+        document.getElementById("infoName").textContent = name;
+        document.getElementById("infoTitle").textContent = title || "";
+        document.getElementById("infoImage").src = imageUrl;
+        modal.classList.add("show");
+      }
+      function hideInfoModal() {
+        modal.classList.remove("show");
+      }
+      closeBtn.onclick = hideInfoModal;
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) hideInfoModal();
+      });
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") hideInfoModal();
+      });
+
+      // Add politician
+      function addPolitician(
+        lat,
+        lng,
+        name,
+        imageUrl,
+        role = "member",
+        title = ""
+      ) {
+        const marker = L.marker([lat, lng], {
           icon: createPoliticianIcon(imageUrl, map.getZoom(), name, role),
           draggable: true,
         }).addTo(map);
 
-        marker.bindPopup(`<b>${name}</b> (${title})`);
-        politicianMarkers.push({
-          marker: marker,
-          imageUrl: imageUrl,
-          name: name,
-          role: role,
-          title: title,
-        });
+        marker.on("click", () => showInfoModal(name, imageUrl, title));
+
+        politicianMarkers.push({ marker, imageUrl, name, role, title });
       }
 
       function addPoliticianFromForm() {
-        let name = document.getElementById("nameInput").value || "no name";
-        let img =
+        const name = document.getElementById("nameInput").value || "no name";
+        const img =
           document.getElementById("imgInput").value ||
           "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png";
-        let role = document.getElementById("roleInput").value;
+        const title = document.getElementById("titleInput").value || "";
+        const role = document.getElementById("roleInput").value || "member";
 
         addPolitician(20, 0, name, img, role, title);
 
         document.getElementById("nameInput").value = "";
         document.getElementById("imgInput").value = "";
+        document.getElementById("titleInput").value = "";
+        document.getElementById("roleInput").selectedIndex = 0;
       }
 
-      // zoom Level
-      map.on("zoom", function () {
-        let zoomLevel = map.getZoom();
+      // Resize on zoom
+      map.on("zoom", () => {
+        const zoomLevel = map.getZoom();
         politicianMarkers.forEach((p) => {
           p.marker.setIcon(
-            createPoliticianIcon(p.imageUrl, zoomLevel, p.name, p.role, p.title)
+            createPoliticianIcon(p.imageUrl, zoomLevel, p.name, p.role)
           );
         });
       });
 
-      // initial Politicians
-      var initialPoliticians = [
+      // Initial politicians
+      const initialPoliticians = [
         {
           name: "Donald Trump",
           lat: 38.9,
           lng: -77.03,
           imageUrl: "img/Donald_Trump.jpg",
           role: "leader",
-          title: "President",
+          title: "President of the United States",
         },
         {
           name: "Xi Jinping",
@@ -176,7 +305,7 @@
           lng: 116.4,
           imageUrl: "img/Xi_Jinping.jpg",
           role: "leader",
-          title: "President",
+          title: "President of China",
         },
         {
           name: "Abdul-Malik al-Houthi",
@@ -184,13 +313,12 @@
           lng: 44.21,
           imageUrl: "img/Abdul_Malik_al_Houthi.jpg",
           role: "leader",
-          title: "leader",
+          title: "Leader of Ansar Allah",
         },
       ];
-
-      initialPoliticians.forEach((p) => {
-        addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role, p.title);
-      });
+      initialPoliticians.forEach((p) =>
+        addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role, p.title)
+      );
     </script>
     <script>
       fetch("politicians.json")
@@ -200,7 +328,7 @@
             addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role, p.title);
           });
         })
-        .catch((error) => console.error("خطا در بارگذاری فایل:", error));
+        .catch((error) => console.error("error", error));
     </script>
   </body>
 </html>
