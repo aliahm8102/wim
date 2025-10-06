@@ -193,6 +193,20 @@
           });
         })
         .catch((error) => console.error("error", error));
+
+      fetch("nato-countries.json")
+        .then((response) => response.json())
+        .then((data) => {
+          L.geoJSON(data, {
+            style: {
+              fillColor: "blue",
+              weight: 2,
+              color: "white",
+              fillOpacity: 0.6,
+            },
+            interactive: false,
+          }).addTo(map);
+        });
     </script>
     <script>
       // calculate vh in devices

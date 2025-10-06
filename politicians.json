@@ -433,5 +433,37 @@
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Elon_Musk_%2854816836217%29_%28cropped%29.jpg/500px-Elon_Musk_%2854816836217%29_%28cropped%29.jpg",
             "title": "Leader of Tesla, SpaceX, X/Twitter",
             "role": "member"
+        },
+        {
+            "name": "Hibatullah Akhundzada",
+            "lat": 34.555,
+            "lng": 69.207,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/3/3a/Hibatullah_Akhundzada.jpg",
+            "title": "Supreme leader of Taliban government",
+            "role": "leader"
+        },
+         {
+            "name": "Nechirvan Barzani",
+            "lat": 36.1877,
+            "lng": 44.0107,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/93/Nechirvan_Barzani_2025_%28cropped%29.jpg",
+            "title": "President of Kurdistan Region",
+            "role": "leader"
+        },
+         {
+            "name": "Mazloum Abdi",
+            "lat": 37.0317,
+            "lng": 41.2341,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Mezl%C3%BBm_Ebd%C3%AE.jpg/250px-Mezl%C3%BBm_Ebd%C3%AE.jpg",
+            "title": "Commander-in-chief of the Syrian Democratic Forces(SDF)",
+            "role": "leader"
+        },
+         {
+            "name": "Asim Munir Ahmed Shah",
+            "lat": 33.36,
+            "lng": 73.02,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/40/Field_Marshal_Asim_Munir.jpg/250px-Field_Marshal_Asim_Munir.jpg",
+            "title": "Chief of the Army Staff of the Pakistan Army",
+            "role": "member"
         }
       ]
