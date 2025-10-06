@@ -68,56 +68,56 @@
 
         {
             "name": "Masoud Pezeshkian",
-            "lat": 35,
-            "lng": 51.3,
+            "lat": 35.6917,
+            "lng": 51.4008,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Masoud_Pezeshkian_14040616_%28cropped%29.jpg/250px-Masoud_Pezeshkian_14040616_%28cropped%29.jpg",
             "role": "member",
             "title": "President"
         },
         {
             "name": "Abbas Araghchi",
-            "lat": 35.2,
-            "lng": 51.3,
+            "lat": 35.6882,
+            "lng": 51.4159,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/da/14031011_Abbas_Araghchi_%28cropped%29.jpg",
             "role": "member",
             "title": "Minister of Foreign Affairs"
         },
         {
             "name": "Amir Hatami",
-            "lat": 35.80,
-            "lng": 51.3,
+            "lat": 35.734,
+            "lng": 51.452,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Amir_Hatami_2019.jpg",
             "role": "member",
             "title": "commander of Army"
         },
         {
             "name": "AhmadReza Radan",
-            "lat": 35.75,
-            "lng": 51.35,
+            "lat": 35.7668,
+            "lng": 51.4042,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/Ahmad-Reza_Radan_press_conference%2C_19_February_2017_%281395120113094845510050934%29.jpg",
             "role": "member",
             "title": "Chief of Law Enforcement Force"
         },
         {
             "name": "Mohammad Pakpour",
-            "lat": 35.75,
-            "lng": 51.25,
+            "lat": 35.688,
+            "lng": 51.511,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Sardar_Mohammad_Pakpour-by_Tasnimnews.com_02%29.jpg/120px-Sardar_Mohammad_Pakpour-by_Tasnimnews.com_02%29.jpg",
             "role": "member",
             "title": "commander of the IRGC"
         },
         {
             "name": "Abdolrahim Mousavi",
-            "lat": 35.75,
-            "lng": 51.3,
+            "lat": 35.7320,
+            "lng": 51.4555,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Abdolrahim_Mousavi_2019.jpg/500px-Abdolrahim_Mousavi_2019.jpg",
             "role": "member",
             "title": "chief of staff of the Armed Forces"
         },
         {
             "name": "Seyyed Ali Khamenei",
-            "lat": 35.7,
-            "lng": 51.3,
+            "lat": 35.692,
+            "lng": 51.399,
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Ali_Khamenei_2025_%283x4_cropped%29.jpg/250px-Ali_Khamenei_2025_%283x4_cropped%29.jpg",
             "role": "leader",
             "title": "leader"
@@ -345,5 +345,93 @@
             "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Nikol_Pashinyan_in_Tirana%2C_Albania_on_May_15%2C_2025_%28cropped%29.jpg/500px-Nikol_Pashinyan_in_Tirana%2C_Albania_on_May_15%2C_2025_%28cropped%29.jpg",
             "role": "leader",
             "title": "Prime Minister"
+        },
+        {
+            "name": "Mohammad Karami",
+            "lat": 35.679,
+            "lng": 51.521,
+            "imageUrl": "img/Mohammad_Karami.jpg",
+            "title": "Commander of IRGC Ground Forces",
+            "role": "member"
+        },
+        {
+            "name": "Kioumars Heydari",
+            "lat": 35.7943,
+            "lng": 51.5083,
+            "imageUrl": "img/Kioumars_Heydari.jpg",
+            "title": "Commander of the Islamic Republic of Iran Army Ground Forces",
+            "role": "member"
+        },
+        {
+            "name": "Shahram Irani",
+            "lat": 35.7536,
+            "lng": 51.4904,
+            "imageUrl": "img/Shahram_Irani.jpg",
+            "title": "Commander of the Islamic Republic of Iran Navy",
+            "role": "member"
+        },
+        {
+            "name": "Hamid Vahedi",
+            "lat": 35.705,
+            "lng": 51.4817,
+            "imageUrl": "img/Hamid_Vahedi.jpg",
+            "title": "Commander of the Air Force of the Islamic Republic of Iran Army",
+            "role": "member"
+        },
+        {
+            "name": "Alireza Tangsiri",
+            "lat": 35.7009,
+            "lng": 51.5048,
+            "imageUrl": "img/Alireza_Tangsiri.jpg",
+            "title": "Commander of the IRGC Navy",
+            "role": "member"
+        },
+        {
+            "name": "Esmail Qaani",
+            "lat": 35.8271,
+            "lng": 51.3664,
+            "imageUrl": "img/Esmail_Qaani.jpg",
+            "title": "Commander of the IRGC Quds Force",
+            "role": "member"
+        },
+        {
+            "name": "Sayyed Hossein Mousavi Eftekhari",
+            "lat": 35.735,
+            "lng": 51.23,
+            "imageUrl": "img/Sayyed_Hosein_Majid_Mousavi_Eftekhari.jpg",
+            "title": "Commander of the IRGC Aerospace Force",
+            "role": "member"
+        },
+        {
+            "name": "Aziz Nasirzadeh",
+            "lat": 35.7953,
+            "lng": 51.4811,
+            "imageUrl": "img/Aziz_Nasirzadeh.jpg",
+            "title": "Minister of Defense of Iran",
+            "role": "member"
+        },
+        {
+            "name": "Andrey Removich Belousov",
+            "lat": 55.72,
+            "lng": 37.63,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Belousov-HR.jpg/500px-Belousov-HR.jpg",
+            "title": "Minister of Defence of Russia",
+            "role": "member"
+        },
+        {
+            "name": "Oleksandr Syrskyi",
+            "lat": 50.45,
+            "lng": 30.52,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/OleskandrSyrskyiColonelGeneral.jpg/500px-OleskandrSyrskyiColonelGeneral.jpg",
+            "title": "Commander-in-Chief of the Armed Forces of Ukraine",
+            "role": "member"
+        },
+        {
+            "name": "Elon Reeve Musk",
+            "lat": 37.77,
+            "lng": -122.42,
+            "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Elon_Musk_%2854816836217%29_%28cropped%29.jpg/500px-Elon_Musk_%2854816836217%29_%28cropped%29.jpg",
+            "title": "Leader of Tesla, SpaceX, X/Twitter",
+            "role": "member"
         }
       ]
