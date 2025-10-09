@@ -74,9 +74,10 @@
         role = "member"
       ) {
         const size = zoomLevel * 3 + 20;
-        const borderColor = role === "leader" ? "gold" : "#333";
-        const borderWidth = role === "leader" ? "4px" : "2px";
-
+        const borderColor =
+          role === "leader" ? "gold" : role === "army" ? "green" : "#333";
+        const borderWidth =
+          role === "leader" ? "4px" : role === "army" ? "3px" : "2px";
         return L.divIcon({
           html: `<div class="politician-icon"
                       style="width:${size}px;height:${size}px;border:${borderWidth} solid ${borderColor};"
@@ -120,6 +121,7 @@
         const marker = L.marker([lat, lng], {
           icon: createPoliticianIcon(imageUrl, map.getZoom(), name, role),
           draggable: true,
+          zIndexOffset: role === "leader" ? 1000 : 0,
         }).addTo(map);
 
         marker.on("click", () => showInfoModal(name, imageUrl, title));
