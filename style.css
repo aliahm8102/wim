@@ -200,3 +200,34 @@ button.addBtn:hover {
     height: calc(var(--vh, 1vh) * 92);
   }
 }
+
+#timeControls {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 12px;
+    color: white;
+    z-index: 1000;
+}
+#timeBar {
+    width: 200px;
+    margin-top: 6px;
+    display: none;
+}
+#yearLabel {
+    margin-left: 8px;
+    font-weight: bold;
+}
+#toggleTimeBar {
+    background: #2b6cb0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+#toggleTimeBar:hover {
+    background: #2c5282;
+}

@@ -20,7 +20,10 @@
         <option value="" disabled selected hidden>role</option>
         <option value="member">member</option>
         <option value="leader">leader</option>
+        <option value="army">army</option>
       </select>
+      <input type="number" id="startYearInput" placeholder="start year" />
+      <input type="number" id="endYearInput" placeholder="end year" />
       <button class="addBtn" onclick="addPoliticianFromForm()">Add</button>
     </div>
 
@@ -37,18 +40,23 @@
       </div>
     </div>
 
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-      // Toggle Form Visibility
-      const toggleBtn = document.getElementById("toggleForm");
-      const controls = document.getElementById("controls");
-      toggleBtn.onclick = () => {
-        controls.classList.toggle("show");
-        toggleBtn.textContent = controls.classList.contains("show")
-          ? "✖ Close Form"
-          : "➕ Add Politician";
-      };
+    <!-- Time Bar Control -->
+    <div id="timeControls">
+      <button id="toggleTimeBar">🕓 Time Control</button><br />
+      <input
+        type="range"
+        id="timeBar"
+        min="1900"
+        max="2026"
+        value="2025"
+        step="1"
+      />
+      <span id="yearLabel">2025</span>
+    </div>
 
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+    <script>
       // Map setup
       const map = L.map("map", {
         maxBounds: [
@@ -65,8 +73,9 @@
       }).addTo(map);
 
       const politicianMarkers = [];
+      const layerGroup = L.layerGroup().addTo(map);
 
-      // Icon creator (role controls border color)
+      // Icon creator
       function createPoliticianIcon(
         imageUrl,
         zoomLevel,
@@ -80,16 +89,16 @@
           role === "leader" ? "4px" : role === "army" ? "3px" : "2px";
         return L.divIcon({
           html: `<div class="politician-icon"
-                      style="width:${size}px;height:${size}px;border:${borderWidth} solid ${borderColor};"
-                      title="${name}">
-                    <img src="${imageUrl}" />
-                 </div>`,
+                  style="width:${size}px;height:${size}px;border:${borderWidth} solid ${borderColor};"
+                  title="${name}">
+              <img src="${imageUrl}" />
+           </div>`,
           className: "",
           iconSize: [size, size],
         });
       }
 
-      // Modal logic
+      // Modal
       const modal = document.getElementById("infoModal");
       const closeBtn = document.getElementById("closeInfo");
       function showInfoModal(name, imageUrl, title) {
@@ -109,40 +118,62 @@
         if (e.key === "Escape") hideInfoModal();
       });
 
-      // Add politician
+      const timeBar = document.getElementById("timeBar");
+      const toggleTimeBar = document.getElementById("toggleTimeBar");
+      const yearLabel = document.getElementById("yearLabel");
+      const getSliderYear = () => parseInt(timeBar.value, 10);
+
       function addPolitician(
         lat,
         lng,
         name,
         imageUrl,
-        role = "member",
-        title = ""
+        role,
+        title,
+        startYear,
+        endYear
       ) {
         const marker = L.marker([lat, lng], {
           icon: createPoliticianIcon(imageUrl, map.getZoom(), name, role),
           draggable: true,
           zIndexOffset: role === "leader" ? 1000 : 0,
-        }).addTo(map);
+        });
 
         marker.on("click", () => showInfoModal(name, imageUrl, title));
 
-        politicianMarkers.push({ marker, imageUrl, name, role, title });
+        const record = {
+          marker,
+          imageUrl,
+          name,
+          role,
+          title,
+          startYear,
+          endYear,
+        };
+        politicianMarkers.push(record);
+
+        const currentYear = getSliderYear();
+        const show =
+          (startYear == null || currentYear >= startYear) &&
+          (endYear == null || currentYear <= endYear);
+
+        if (show) marker.addTo(layerGroup);
       }
 
-      function addPoliticianFromForm() {
-        const name = document.getElementById("nameInput").value || "no name";
-        const img =
-          document.getElementById("imgInput").value ||
-          "https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png";
-        const title = document.getElementById("titleInput").value || "";
-        const role = document.getElementById("roleInput").value || "member";
+      function updateVisibility(year) {
+        politicianMarkers.forEach((p) => {
+          const shouldShow =
+            (p.startYear == null || year >= p.startYear) &&
+            (p.endYear == null || year <= p.endYear);
 
-        addPolitician(20, 0, name, img, role, title);
+          const isShown = layerGroup.hasLayer(p.marker);
 
-        document.getElementById("nameInput").value = "";
-        document.getElementById("imgInput").value = "";
-        document.getElementById("titleInput").value = "";
-        document.getElementById("roleInput").selectedIndex = 0;
+          if (shouldShow && !isShown) {
+            p.marker.addTo(layerGroup);
+          } else if (!shouldShow && isShown) {
+            layerGroup.removeLayer(p.marker);
+          }
+        });
       }
 
       // Resize on zoom
@@ -155,7 +186,6 @@
         });
       });
 
-      // Initial politicians
       const initialPoliticians = [
         {
           name: "Donald Trump",
@@ -164,6 +194,8 @@
           imageUrl: "img/Donald_Trump.jpg",
           role: "leader",
           title: "President of the United States",
+          startYear: 2017,
+          endYear: 2021,
         },
         {
           name: "Xi Jinping",
@@ -172,6 +204,8 @@
           imageUrl: "img/Xi_Jinping.jpg",
           role: "leader",
           title: "President of China",
+          startYear: 2013,
+          endYear: null,
         },
         {
           name: "Abdul-Malik al-Houthi",
@@ -180,46 +214,58 @@
           imageUrl: "img/Abdul_Malik_al_Houthi.jpg",
           role: "leader",
           title: "Leader of Ansar Allah",
+          startYear: 2004,
+          endYear: null,
         },
       ];
       initialPoliticians.forEach((p) =>
-        addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role, p.title)
+        addPolitician(
+          p.lat,
+          p.lng,
+          p.name,
+          p.imageUrl,
+          p.role,
+          p.title,
+          p.startYear,
+          p.endYear
+        )
       );
-    </script>
-    <script>
+
       fetch("politicians.json")
         .then((response) => response.json())
         .then((data) => {
           data.forEach((p) => {
-            addPolitician(p.lat, p.lng, p.name, p.imageUrl, p.role, p.title);
+            addPolitician(
+              p.lat,
+              p.lng,
+              p.name,
+              p.imageUrl,
+              p.role,
+              p.title,
+              p.startYear ?? null,
+              p.endYear ?? null
+            );
           });
+
+          updateVisibility(getSliderYear());
         })
         .catch((error) => console.error("error", error));
 
-      fetch("nato-countries.json")
-        .then((response) => response.json())
-        .then((data) => {
-          L.geoJSON(data, {
-            style: {
-              fillColor: "blue",
-              weight: 2,
-              color: "white",
-              fillOpacity: 0.6,
-            },
-            interactive: false,
-          }).addTo(map);
-        });
-    </script>
-    <script>
-      // calculate vh in devices
-      function setVh() {
-        document.documentElement.style.setProperty(
-          "--vh",
-          `${window.innerHeight * 0.01}px`
-        );
-      }
-      setVh();
-      window.addEventListener("resize", setVh);
+      // === Time Bar Logic ===
+      toggleTimeBar.onclick = () => {
+        timeBar.style.display =
+          timeBar.style.display === "none" ? "block" : "none";
+      };
+
+      yearLabel.textContent = timeBar.value;
+
+      timeBar.addEventListener("input", (e) => {
+        const year = parseInt(e.target.value, 10);
+        yearLabel.textContent = year;
+        updateVisibility(year);
+      });
+
+      updateVisibility(getSliderYear());
     </script>
   </body>
 </html>
