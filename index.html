@@ -89,10 +89,10 @@
           role === "leader" ? "4px" : role === "army" ? "3px" : "2px";
         return L.divIcon({
           html: `<div class="politician-icon"
-                  style="width:${size}px;height:${size}px;border:${borderWidth} solid ${borderColor};"
-                  title="${name}">
-              <img src="${imageUrl}" />
-           </div>`,
+                    style="width:${size}px;height:${size}px;border:${borderWidth} solid ${borderColor};"
+                    title="${name}">
+                <img src="${imageUrl}" />
+             </div>`,
           className: "",
           iconSize: [size, size],
         });
@@ -186,55 +186,18 @@
         });
       });
 
-      const initialPoliticians = [
-        {
-          name: "Donald Trump",
-          lat: 38.9,
-          lng: -77.03,
-          imageUrl: "img/Donald_Trump.jpg",
-          role: "leader",
-          title: "President of the United States",
-          startYear: 2017,
-          endYear: 2021,
-        },
-        {
-          name: "Xi Jinping",
-          lat: 39.9,
-          lng: 116.4,
-          imageUrl: "img/Xi_Jinping.jpg",
-          role: "leader",
-          title: "President of China",
-          startYear: 2013,
-          endYear: null,
-        },
-        {
-          name: "Abdul-Malik al-Houthi",
-          lat: 15.35,
-          lng: 44.21,
-          imageUrl: "img/Abdul_Malik_al_Houthi.jpg",
-          role: "leader",
-          title: "Leader of Ansar Allah",
-          startYear: 2004,
-          endYear: null,
-        },
-      ];
-      initialPoliticians.forEach((p) =>
-        addPolitician(
-          p.lat,
-          p.lng,
-          p.name,
-          p.imageUrl,
-          p.role,
-          p.title,
-          p.startYear,
-          p.endYear
+      // === load data ===
+      const files = ["politicians.json", "Iran.json", "Historical.json"];
+      Promise.all(
+        files.map((f) =>
+          fetch(f)
+            .then((r) => (r.ok ? r.json() : []))
+            .catch(() => [])
         )
-      );
-
-      fetch("politicians.json")
-        .then((response) => response.json())
-        .then((data) => {
-          data.forEach((p) => {
+      )
+        .then((lists) => {
+          const all = lists.flat();
+          all.forEach((p) => {
             addPolitician(
               p.lat,
               p.lng,
@@ -253,8 +216,8 @@
 
       // === Time Bar Logic ===
       toggleTimeBar.onclick = () => {
-        timeBar.style.display =
-          timeBar.style.display === "none" ? "block" : "none";
+        const isHidden = getComputedStyle(timeBar).display === "none";
+        timeBar.style.display = isHidden ? "block" : "none";
       };
 
       yearLabel.textContent = timeBar.value;
